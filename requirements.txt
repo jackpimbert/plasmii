@@ -1,0 +1,7 @@
+Django==1.8
+djangorestframework==3.2.3
+ipython==4.0.0
+mod_wsgi==4.4.13
+pytz==2015.4
+psycopg2==2.6.1
+

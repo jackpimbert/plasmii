@@ -1,0 +1,12 @@
+<script type="text/ng-template" id="confirmModal.html">
+    <div class="modal-header modal-small">
+        <h4 class="modal-title">{{modalOptions.modalTitle}}</h4>
+    </div>
+    <div class="modal-body modal-small">
+        {{ modalOptions.modalMessage }}
+    </div>
+    <div class="modal-footer modal-small">
+        <button class="btn btn-primary btn-sm" ng-click="modalOptions.ok()">OK</button>
+        <button class="btn btn-warning btn-sm" ng-click="modalOptions.close()">Cancel</button>
+    </div>
+</script>

@@ -1,0 +1,8 @@
+<script type="text/ng-template" id="datepicker.html">
+	<p class="input-group datepicker {{smallWidth()}}">
+	<input datepicker-popup="{{format}}" datepicker-localdate type="text" class="form-control {{smallInput()}}" placeholder="{{dateLabel}}" ng-model="dateModel" min-date="minDate" max-date="maxDate" is-open="dtOpen" close-text="Close" ng-required="false"/>
+		<span class="input-group-btn">
+			<button type="button" class="btn btn-default {{smallButton()}}" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+		</span>
+	</p>
+</script>

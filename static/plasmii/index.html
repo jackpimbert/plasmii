@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="plasmii" >
+<head profile="http://www.w3.org/2005/10/profile">
+    <title>plasMII</title>
+	<meta charset="UTF-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- custom CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/plasmii/assets/css/plasmii.css">
+</head>
+
+<body>
+        <div>
+            <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+					<a class="navbar-brand" href="#/"><strong>plasMII</strong></a>
+                </div>
+            </div>
+            </nav>
+        </div>
+
+    <!-- Empty container for the actual dynamic content -->
+    <div id="page-container" class="container">
+        <div id="page" ng-view ng-cloak></div>
+	</div>
+
+    <!-- Importing Angular JS -->
+    <script src="/static/bower_components/angularjs/angular.js"></script>
+    <script src="/static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/static/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/static/bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="/static/bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+	<script src="/static/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+	<!-- Shared Partials -->
+	<div ng-include='"/static/plasmii/shared/partials/loading-bars.html"'></div>
+	<div ng-include='"/static/plasmii/shared/partials/loading-spinner.html"'></div>
+
+	<!-- Shared Directives -->
+	<script src="/static/plasmii/shared/directives/directives.module.js"></script>
+	<script src="/static/plasmii/shared/directives/datepicker/datepicker.js"></script>
+	<div ng-include='"/static/plasmii/shared/directives/datepicker/datepicker.html"'></div>
+	<script src="/static/plasmii/shared/directives/file-upload/file-upload.js"></script>
+	<div ng-include='"/static/plasmii/shared/directives/file-upload/file-upload.html"'></div>
+
+	<!-- Shared Factories -->
+	<script src="/static/plasmii/shared/factories/factories.module.js"></script>
+	<script src="/static/plasmii/shared/factories/user.factory.js"></script>
+	<script src="/static/plasmii/shared/factories/plasmid-entry.factory.js"></script>
+
+	<!-- Shared Services -->
+	<script src="/static/plasmii/shared/services/services.module.js"></script>
+	<script src="/static/plasmii/shared/services/common.service.js"></script>
+	<script src="/static/plasmii/shared/services/error-alert.service.js"></script>
+	<script src="/static/plasmii/shared/services/modal/modal.service.js"></script>
+	<div ng-include='"/static/plasmii/shared/services/modal/errorModal.html"'></div>
+	<div ng-include='"/static/plasmii/shared/services/modal/confirmModal.html"'></div>
+
+
+	<!-- Plasmid Modules -->
+    <script src="/static/plasmii/plasmid/plasmid.module.js"></script>
+	<!-- services -->
+    <script src="/static/plasmii/plasmid/services/plasmid-entry.service.js"></script>
+	<!-- controllers -->
+    <script src="/static/plasmii/plasmid/list-entries/list-entries.ctrl.js"></script>
+    <script src="/static/plasmii/plasmid/create-entry/create-entry.ctrl.js"></script>
+    <script src="/static/plasmii/plasmid/edit-entry/edit-entry.ctrl.js"></script>
+    <script src="/static/plasmii/plasmid/view-entry/view-entry.ctrl.js"></script>
+
+	<!-- Modules -->
+	<script src="/static/plasmii/plasmii.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<form autofill="off" autocomplete="off" ng-submit="create()" novalidate>
+	<div>
+		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+	</div>
+	<h1>
+		<span>Create Plasmid Entry</span>
+	</h1>
+	<div class="panel panel-default list-panel">
+		<div class="panel-heading">
+			<h2 class="panel-title">Properties</h2>
+		</div>
+		<table class="table table-hover">
+			<tr>
+				<th class="property-header col-md-3 col-sm-3 col-xs-3">Name</th>
+				<td>
+					<input type="text" class="col-md-9 col-sm-9 col-xs-9" ng-model="entry.name" placeholder="Enter name..."/>
+				</td>
+			</tr>
+			<tr>
+				<th class="property-header col-md-3 col-sm-3 col-xs-3">Description</th>
+				<td>
+					<input type="text" class="col-md-9 col-sm-9 col-xs-9" ng-model="entry.description" placeholder="Enter description..."/>
+				</td>
+			</tr>
+			<tr>
+				<th class="property-header">Upload file</th>
+				<td file-upload uploaded-file="file" small="true"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<input class="btn btn-default btn-sm pull-left" value="Add Plasmid" type="submit">
+		<div class="spinner-on-right" ng-include src="'loading-spinner.html'" ng-if="inProgress"></div>
+	</div>
+</form>

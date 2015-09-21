@@ -1,0 +1,46 @@
+<div>
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<h1>
+	<span>Plasmid Database</span>
+</h1>
+<small class="source-counter">Displaying {{filter.filtered.length || 0}} out of {{entryList.count || 0}} plasmid entries</small>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="filter search col-md-2 cold-sm-2 col-xs-2">
+			<input class="form-control input-sm" placeholder="Search" ng-model="searchText">
+		</div>
+		<div class="filter col-md-2 col-sm-2 col-xs-2" mydatepicker date-label="End date" date-model="rangeInfo.endDt" small="true"></div>
+		<small class="filter date-to-text"><i>to</i></small>
+		<div class="filter col-md-2 col-sm-2 col-xs-2" mydatepicker date-label="Start date" date-model="rangeInfo.startDt" small="true"></div>
+		<h2>
+			Add Entry
+			<a href="#/plasmid/create"><span class="create-source glyphicon glyphicon-plus-sign icons"></a>
+		</h2>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr><div ng-include src="'loading-bars.html'" ng-if="!entryList.$resolved"></tr>
+		</table>
+		<table class="table table-hover" ng-if="entryList.$resolved">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th width="10px">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody class="list-sources-table">
+				<tr ng-repeat="entry in filter.filtered = (entryList.results)">
+					<td ng-bind="entry.name"></td>
+					<td ng-bind="entry.description"></td>
+					<td> <a href="#/plasmid/{{entry.id}}/edit"><span class="glyphicon glyphicon-pencil icons"></a></td>
+				</tr>
+				<tr ng-show="filter.filtered.length == 0">
+					<td colspan="100%" class="center">No results found</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="panel-footer"><small>Displaying {{filter.filtered.length || 0}} out of {{entryList.count || 0}} plasmid entries</small></div>
+	</div>
+</div>

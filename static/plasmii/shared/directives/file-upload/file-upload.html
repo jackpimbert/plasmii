@@ -1,0 +1,29 @@
+<script type="text/ng-template" id="file-upload.html">
+	<div class="btn btn-default pull-left" ng-class="{'btn-sm': small}" accept=".jpg,.png" ngf-accept="'.jpg,.png'" ng-model-rejected="rejected" ngf-select ngf-change="upload($files)">Upload file</div>
+
+	<button type="button" class="btn btn-warning view-contract-btn" ng-class="{'btn-sm': small}" ng-disabled="!uploadedFile.file" ng-click="clear()">Clear</button>
+
+	<div class="fileupload-info" ng-if="rejected[0]">Cannot upload <strong>{{rejected[0].name}}</strong>.<br>File uploads must be PDFs!</div>
+	<div class="fileupload-info" ng-if="uploadedFile.filename && !rejected[0]">Uploaded: <strong>{{uploadedFile.filename}}</strong></div>
+
+	<div class="spinner-circle spinner-on-right" ng-if="uploading">
+	  <div class="spinner-container container1">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		<div class="circle4"></div>
+	  </div>
+	  <div class="spinner-container container2">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		<div class="circle4"></div>
+	  </div>
+	  <div class="spinner-container container3">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		<div class="circle4"></div>
+	  </div>
+	</div>
+</script>
